@@ -108,4 +108,15 @@ echo "replace ubiquity slideshow"
 sudo rm -r /usr/share/ubiquity-slideshow/slides
 sudo cp -r ./slides /usr/share/ubiquity-slideshow/
 
+sudo cp -r ./bg/* /usr/share/backgrounds
+
+echo "change distro name completely"
+sed -i 's/Ubuntu/TurboTux/g' /etc/os-release
+sed -i 's/22.04/23.09/g' /etc/os-release
+sed -i 's/Ubuntu/TurboTux/g' /etc/lsb-release
+sed -i 's/22.04/23.09/g' /etc/lsb-release
+sed -i 's/Ubuntu/TurboTux/g' /etc/issue
+sed -i 's/22.04/23.09/g' /etc/issue
+
+
 echo "I think it's done"
