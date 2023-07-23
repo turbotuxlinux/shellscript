@@ -86,7 +86,7 @@ sudo apt update
 
 echo "Install most things"
 sudo apt install linux-headers-6.1.38turbotux linux-image-6.1.38turbotux linux-libc-6.1.38turbotux
-sudo apt install firefox obs-studio kdenlive lutris openrgb steam sc-controller minecraft-launcher retroarch flatpak -y
+sudo apt install firefox obs-studio kdenlive lutris openrgb steam sc-controller minecraft-launcher retroarch flatpak vlc -y
 
 echo "flatpak"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -103,5 +103,9 @@ echo '
 [org.gnome.shell]
 favorite-apps = "['firefox.desktop', 'org.gnome.Nautilus.desktop']"
 ' > /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
+
+echo "replace ubiquity slideshow"
+sudo rm -r /usr/share/ubiquity-slideshow/slides
+sudo cp -r ./slides /usr/share/ubiquity-slideshow/
 
 echo "I think it's done"
